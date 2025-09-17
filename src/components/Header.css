@@ -1,0 +1,17 @@
+.header{
+    position:fixed;
+    background-color: burlywood;
+    height: 2rem;
+    width: 100vw;
+    display: flex;
+    justify-content:space-between ;
+    align-items:center ;
+    padding-inline:30px;
+}
+.navlist{
+    display: flex;
+}
+ul>li{
+padding-inline: 10px;
+list-style: none;
+}

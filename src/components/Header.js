@@ -1,29 +1,29 @@
-import "./Header.css"
+import "./Header.css";
 import { logo } from "../utils/constant";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
-return(
+  const onlineStatus = useOnlineStatus();
+  return (
     <div className="header">
-        <div className="logo">
-            <img src={logo} width={"40px"}/>
-        </div>
-        <div className="navlinks">
-            <ul className="navlist">
-                <li> 
-            Home
-                </li>
-                 <li><Link to={"/about"}>  About</Link>
-          
-                </li> <li>
-            Shop
-                </li> <li>
-            Cart
-                </li>
-            </ul>
-        </div>
+      <div className="logo">
+        <img src={logo} width={"40px"} />
+      </div>
+      <div className="navlinks">
+        <ul className="navlist">
+          <li>Online : {onlineStatus ? "✅" : " 🔴"}</li>
+          <li>
+            <Link to={"/"}> Home </Link>
+          </li>
+          <li>
+            <Link to={"/about"}> About</Link>
+          </li>{" "}
+          <li>Shop</li> <li>Cart</li>
+        </ul>
+      </div>
     </div>
-)
-}
+  );
+};
 
 export default Header;
